@@ -1,0 +1,263 @@
+:root,
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #121212;
+  --bg-card: #121212;
+  --bg-input: #262626;
+  --border-color: #262626;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a8a8a8;
+  --text-muted: #737373;
+  --accent-blue: #0095f6;
+  --accent-red: #ed4956;
+  --accent-green: #78de45;
+  --accent-yellow: #ffc107;
+  --table-border: #1a1a1a;
+  --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  --ig-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-input: #efefef;
+  --border-color: #dbdbdb;
+  --text-primary: #262626;
+  --text-secondary: #737373;
+  --text-muted: #8e8e8e;
+  --accent-blue: #0095f6;
+  --accent-red: #ed4956;
+  --accent-green: #10b981;
+  --accent-yellow: #f59e0b;
+  --table-border: #efefef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--ig-font-stack);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Instagram Minimalist Card Panel */
+.ig-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, background-color 0.25s ease;
+}
+
+.ig-card:hover {
+  border-color: var(--text-muted);
+}
+
+.ig-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ig-badge-accept {
+  background: rgba(120, 222, 69, 0.12);
+  color: var(--accent-green);
+  border: 1px solid rgba(120, 222, 69, 0.3);
+}
+
+.ig-badge-reject {
+  background: rgba(237, 73, 86, 0.12);
+  color: var(--accent-red);
+  border: 1px solid rgba(237, 73, 86, 0.3);
+}
+
+.ig-btn-primary {
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  font-family: var(--ig-font-stack);
+}
+
+.ig-btn-primary:hover {
+  opacity: 0.88;
+}
+
+.ig-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.ig-btn-attack {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-size: 0.8125rem;
+  transition: all 0.2s ease;
+  font-family: var(--ig-font-stack);
+}
+
+.ig-btn-attack:hover {
+  opacity: 0.85;
+}
+
+.ig-btn-attack:active {
+  transform: scale(0.98);
+}
+
+.ig-input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 0.875rem;
+  font-family: var(--ig-font-stack);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.ig-input:focus {
+  border-color: var(--text-secondary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+/* Quantum File Transmission Widget Styles */
+.qds-dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-input);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qds-dropzone:hover,
+.qds-dropzone.active {
+  border-color: var(--accent-blue);
+  background: rgba(0, 149, 246, 0.04);
+}
+
+.pauli-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease;
+}
+
+.pauli-pill:hover {
+  transform: scale(1.15);
+}
+
+.pauli-I {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.pauli-X {
+  background: rgba(237, 73, 86, 0.15);
+  color: #ed4956;
+  border-color: rgba(237, 73, 86, 0.3);
+}
+
+.pauli-Y {
+  background: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.pauli-Z {
+  background: rgba(0, 149, 246, 0.15);
+  color: #0095f6;
+  border-color: rgba(0, 149, 246, 0.3);
+}
+
+.qds-btn-transmit {
+  background: linear-gradient(135deg, #0095f6 0%, #0077c8 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.84rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.qds-btn-transmit:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 12px rgba(0, 149, 246, 0.3);
+}
+
+.qds-btn-tamper {
+  background: rgba(237, 73, 86, 0.1);
+  color: #ed4956;
+  border: 1px solid rgba(237, 73, 86, 0.35);
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.qds-btn-tamper:hover {
+  background: rgba(237, 73, 86, 0.18);
+}
